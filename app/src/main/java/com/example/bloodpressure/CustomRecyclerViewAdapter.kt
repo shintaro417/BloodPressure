@@ -1,5 +1,6 @@
 package com.example.bloodpressure
 
+import android.content.Intent
 import android.graphics.Color
 import android.icu.text.MessageFormat.format
 import android.text.format.DateFormat
@@ -42,6 +43,14 @@ class CustomRecyclerViewAdapter(realmResults: RealmResults<BloodPress>):Recycler
         holder.pulseText?.text = bloodPress?.pulse.toString()
 
         holder.itemView.setBackgroundColor(if(position % 2 == 0) Color.LTGRAY else Color.WHITE)
+
+        //RecyclerViewの1レコードを表示しているViewがタップされたら、Intentを発行して、EditActivityに画面を遷移するコードを追加する
+        //10th commit
+        holder.itemView.setOnClickListener {
+            val intent = Intent(it.context,EditActivity::class.java)
+            intent.putExtra("id",bloodPress?.id)
+            it.context.startActivity(intent)
+        }
     }
 
     /**
