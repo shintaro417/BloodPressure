@@ -12,6 +12,7 @@ import io.realm.RealmResults
 /**
  * recyclerView.Adapterクラスを継承する
  * Realmのクエリの実行結果であるRealmResultsを受け取る
+ * RecyclerVIewに表示するデータソースを管理する
  */
 class CustomRecyclerViewAdapter(realmResults: RealmResults<BloodPress>):RecyclerView.Adapter<ViewHolder>() {
     private val rResults:RealmResults<BloodPress> = realmResults //データセット

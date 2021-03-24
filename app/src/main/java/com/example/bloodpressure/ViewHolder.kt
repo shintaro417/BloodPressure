@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.one_result.view.*
 
 /**
  * RecyclerView.ViewHolderを継承するクラス
+ * RecyclerViewに表示する個々のビューを管理する
  */
 class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
     var dateText:TextView? = null
